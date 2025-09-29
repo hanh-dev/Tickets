@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=hanhkx12
+      - POSTGRES_DB=tickets
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - "8888:8080"
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    ports:
+      - "9090:8080"
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KC_DB=postgres
+      - KC_DB_URL_HOST=db
+      - KC_DB_URL_DATABASE=tickets
+      - KC_DB_USERNAME=postgres
+      - KC_DB_PASSWORD=hanhkx12
+    command:
+      - start-dev
+    depends_on:
+      - db
+
+volumes:
+  db_data:
