@@ -1,4 +1,4 @@
-package com.platform.tickets.domain;
+package com.platform.tickets.domain.entities;
 
 public enum TicketValidationMethod {
 // QR_SCAN, MANUAL

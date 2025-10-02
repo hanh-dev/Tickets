@@ -1,4 +1,4 @@
-package com.platform.tickets.domain;
+package com.platform.tickets.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -32,6 +32,9 @@ public class TicketType {
 
     @Column(name = "price", nullable = false)
     private Double price;
+
+    @Column(name = "description")
+    private String description;
 
     @Column(name = "total_available", nullable = true)
     private Integer totalAvailable;

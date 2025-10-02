@@ -1,10 +1,9 @@
-package com.platform.tickets.domain;
+package com.platform.tickets.domain.entities;
 
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

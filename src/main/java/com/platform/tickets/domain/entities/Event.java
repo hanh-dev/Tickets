@@ -1,4 +1,4 @@
-    package com.platform.tickets.domain;
+    package com.platform.tickets.domain.entities;
 
     import java.time.LocalDateTime;
     import java.util.ArrayList;
@@ -61,7 +61,7 @@
         private List<User> staff = new ArrayList<>();
 
         @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
-        private List<TicketType> tickets = new ArrayList<>();
+        private List<TicketType> ticketTypes = new ArrayList<>();
 
         @CreatedDate
         @Column(name = "created_at", updatable = false, nullable = false)
